@@ -3,7 +3,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 
-
+"""
 git_repository(
     name = "rules_unreal",
     remote = "git@github.com:arctictheory/bazel_rules_unreal.git",
@@ -15,7 +15,6 @@ local_repository(
     name = "rules_unreal",
     path = "D:/Work/ArcticTheory/bazel_rules_unreal"
     )
-"""
 
 new_local_repository(
     name = "unreal_engine",
