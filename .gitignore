@@ -1,0 +1,36 @@
+Intermediate/
+Saved/
+Build/
+DerivedDataCache/
+Binaries/
+.vs/
+.idea/
+.env
+.vscode/
+
+*.db
+*.sln
+*.ddc
+*.docx
+*.pyc
+
+*.tga
+*.psd
+
+# Built data for maps
+# *_BuiltData.uasset
+
+kamo-backend/
+_Builds/
+SentinelUE4Tools/
+_generated_sentinel_config.json
+UnrealEngine/
+
+# steam stuff
+steam/*
+!steam/steamcmd.exe
+!steam/app_build_template
+!steam/depot_build_template
+
+# houdini stuff
+/Houdini/Tools/backup

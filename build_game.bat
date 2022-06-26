@@ -1,0 +1,1 @@
+.\GameLabs\bazel.exe run //GameLabs/tools:build_game_client -- "%~dp0/UnrealEngine" "%~dp0/BazelTestProjectGame/BazelTestProjectGame.uproject" "existence_windows_shipping_client" "%~dp0/out/"

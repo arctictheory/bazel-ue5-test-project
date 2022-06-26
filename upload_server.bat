@@ -1,0 +1,1 @@
+python GameLabs/tools/s3upload/main.py 
