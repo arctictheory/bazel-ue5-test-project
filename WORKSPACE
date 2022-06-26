@@ -7,7 +7,7 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 git_repository(
     name = "rules_unreal",
     remote = "git@github.com:arctictheory/bazel_rules_unreal.git",
-    commit = "d3d9845b1eff58d2b44eb72b4d2b58abb0e00654"
+    commit = "e4d70440574b983b349fd092a65ecdb486dd7f26"
     )
 
 """
