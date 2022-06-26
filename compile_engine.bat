@@ -1,1 +1,0 @@
-python GameLabs/tools/compile_engine.py %~dp0/UnrealEngine %~dp0/BazelTestProjectGame/BazelTestProjectGame.uproject
