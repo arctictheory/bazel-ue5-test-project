@@ -13,13 +13,13 @@ git_repository(
 """
 local_repository(
     name = "rules_unreal",
-    path = "D:/Work/ArcticTheory/bazel_rules_unreal"
+    path = "C:/Work/bazel-rules-unreal"
     )
 
 new_local_repository(
     name = "unreal_engine",
     build_file = "@rules_unreal//ue5/engine:ue5_engine.BUILD",
-    path = "D:/Work/ArcticTheory/ProjectDawn/UnrealEngine"
+    path = "C:/Work/Epic/UE_5.0"
     )
     
 http_archive(
