@@ -1,3 +1,10 @@
+# Bazel Workspace
+
+bazel-bazel-ue5-test-project/
+bazel-bin/
+bazel-out/
+
+
 Intermediate/
 Saved/
 Build/
