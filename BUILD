@@ -6,16 +6,22 @@ alias(
     actual = "@root_workspace//BazelTestProjectGame:BazelTestProjectGame.uproject",
 )
 
+alias(
+    name = "unreal_executable",
+    actual = "@unreal_engine//:Engine/Binaries/Win64/UnrealEditor-cmd.exe",
+)
+
+
 compile_blueprint(
   name = "compile_bp",
-  engine_executable = "@unreal_engine//:Engine/Binaries/Win64/UnrealEditor-cmd.exe",
+  engine_executable = "unreal_executable",
   project_file = "unreal_project_file",
   blueprint = "@root_workspace//BazelTestProjectGame:Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset"
   )
 
 run_commandlet(
   name = "datavalidation",   
-  engine_executable = "@unreal_engine//:Engine/Binaries/Win64/UnrealEditor-cmd.exe",
+  engine_executable = "unreal_executable",
   project_file = "unreal_project_file",
   commandlet = "DataValidation"
   )
