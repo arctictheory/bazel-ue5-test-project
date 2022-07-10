@@ -8,6 +8,12 @@ git_repository(
     commit = "52f11e72b7a25a369cf8221857f3e5c051fa87b8"
     )
 
+new_local_repository(
+    name = "unreal_engine",
+    build_file = "@rules_unreal//ue5/engine:ue5_engine.BUILD",
+    path = "C:/Work/Epic/UE_5.0"
+    )
+
 """
 local_repository(
     name = "rules_unreal",
