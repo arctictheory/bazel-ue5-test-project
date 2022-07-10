@@ -1,22 +1,26 @@
-<<<<<<< HEAD
 load("@rules_unreal//:unreal_rules.bzl", "compile_blueprint", "run_commandlet")
-=======
-load("@rules_unreal//:unreal_rules.bzl", "compile_blueprint",)
->>>>>>> fa4787e0b3bb7c3e7d900f609af52fddca8c9e54
+load("@rules_unreal//:tools.bzl", "convert_data_validation_to_json")
+
+alias(
+    name = "unreal_project_file",
+    actual = "@root_workspace//BazelTestProjectGame:BazelTestProjectGame.uproject",
+)
 
 compile_blueprint(
   name = "compile_bp",
   engine_executable = "@unreal_engine//:Engine/Binaries/Win64/UnrealEditor-cmd.exe",
-  project_file = "@root_workspace//BazelTestProjectGame:BazelTestProjectGame.uproject",
+  project_file = "unreal_project_file",
   blueprint = "@root_workspace//BazelTestProjectGame:Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset"
   )
-<<<<<<< HEAD
 
 run_commandlet(
-  name = "run_resave_packages",   
+  name = "datavalidation",   
   engine_executable = "@unreal_engine//:Engine/Binaries/Win64/UnrealEditor-cmd.exe",
-  project_file = "@root_workspace//BazelTestProjectGame:BazelTestProjectGame.uproject",
+  project_file = "unreal_project_file",
   commandlet = "DataValidation"
   )
-=======
->>>>>>> fa4787e0b3bb7c3e7d900f609af52fddca8c9e54
+
+convert_data_validation_to_json(
+  name="generate_asset_list",
+  deps = ["@root_workspace//:datavalidation"]
+  )
