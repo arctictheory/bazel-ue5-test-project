@@ -7,7 +7,7 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 git_repository(
     name = "rules_unreal",
     remote = "git@github.com:arctictheory/bazel_rules_unreal.git",
-    commit = "1de30417b4ae2a9e32f83fa95f4a1d646d022bc8"
+    commit = "52f11e72b7a25a369cf8221857f3e5c051fa87b8"
     )
 
 """
@@ -22,14 +22,14 @@ new_local_repository(
     build_file = "@rules_unreal//ue5/engine:ue5_engine.BUILD",
     path = "C:/Work/Epic/UE_5.0"
     )
-"""  
 
+"""  
 http_archive(
     name = "unreal_engine",
     url = "https://at-tools.s3.eu-west-1.amazonaws.com/bazel-archive/ue5/UE_5.0.2.zip",
     build_file = "@rules_unreal//ue5/engine:ue5_engine.BUILD",
 )
-
+"""  
     
 http_archive(
     name = "rules_python",
