@@ -2,30 +2,23 @@ workspace(name = "root_workspace")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
-"""
+
 git_repository(
     name = "rules_unreal",
     remote = "git@github.com:arctictheory/bazel_rules_unreal.git",
-    commit = "23b4fce4ccbd966cc31572fbeb0bf2355ec743fa"
+    branch = "master"
     )
-"""
+
 new_local_repository(
     name = "unreal_engine",
     build_file = "@rules_unreal//ue5/engine:ue5_engine.BUILD",
     path = "C:/Work/Epic/UE_5.0"
     )
 
-
+"""
 local_repository(
     name = "rules_unreal",
     path = "C:/Work/bazel-rules-unreal"
-    )
-
-"""
-new_local_repository(
-    name = "unreal_engine",
-    build_file = "@rules_unreal//ue5/engine:ue5_engine.BUILD",
-    path = "C:/Work/Epic/UE_5.0"
     )
 """
 
