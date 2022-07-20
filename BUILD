@@ -1,5 +1,5 @@
-load("@rules_unreal//:unreal_rules.bzl", "compile_blueprint", "run_commandlet")
-load("@rules_unreal//:tools.bzl", "convert_data_validation_to_json")
+load("@rules_unreal//:rules/unreal_native_rules.bzl", "run_commandlet")
+load("@rules_unreal//:rules/unreal_content_rules.bzl", "convert_data_validation_to_json")
 
 alias(
     name = "unreal_project_file",
@@ -11,13 +11,6 @@ alias(
     actual = "@unreal_engine//:Engine/Binaries/Win64/UnrealEditor-cmd.exe",
 )
 
-
-compile_blueprint(
-  name = "compile_bp",
-  engine_executable = "unreal_executable",
-  project_file = "unreal_project_file",
-  blueprint = "@root_workspace//BazelTestProjectGame:Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset"
-  )
 
 run_commandlet(
   name = "datavalidation",   
