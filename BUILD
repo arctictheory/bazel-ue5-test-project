@@ -1,5 +1,5 @@
-load("@rules_unreal//:rules/unreal_native_rules.bzl", "run_commandlet", "compile_blueprint")
-load("@rules_unreal//:rules/unreal_content_rules.bzl", "convert_data_validation_to_json", "inject_blueprints_to_build_file")
+load("@rules_unreal//:rules/unreal_native_rules.bzl", "run_commandlet")
+load("@rules_unreal//:rules/unreal_content_rules.bzl", "get_project_overview", "inject_blueprints_to_build_file")
 
 alias(
     name = "unreal_project_file",
@@ -18,13 +18,14 @@ run_commandlet(
   commandlet = "DataValidation"
   )
 
-convert_data_validation_to_json(
-  name="generate_asset_list",
+get_project_overview(
+  name="project_overview",
   deps = ["@root_workspace//:unreal_commandlet_DataValidation"]
   )
 
 inject_blueprints_to_build_file (
   name="generate_content_buildfile",
-  asset_list = "@root_workspace//:generate_asset_list"
+  project_overview_file = "@root_workspace//:project_overview",
+  project_folder_name = "BazelTestProjectGame"
 
 )

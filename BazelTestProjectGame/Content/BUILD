@@ -15,13 +15,14 @@ alias(
 
 #### Generated actions! Do not modify bellow! ####
 compile_blueprint(
-    name = "bp_thirdpersongamemode",
+    name = "BP_ThirdPersonGameMode",
     engine_executable = "unreal_executable",
     project_file = "unreal_project_file",
-    blueprint = "//BazelTestProjectGame/Content:thirdperson/blueprints/bp_thirdpersongamemode.uasset")
+    blueprint = "//BazelTestProjectGame/Content:ThirdPerson/Blueprints/BP_ThirdPersonGameMode.uasset")
     
 compile_blueprint(
-    name = "bp_thirdpersoncharacter",
+    name = "BP_ThirdPersonCharacter",
     engine_executable = "unreal_executable",
     project_file = "unreal_project_file",
-    blueprint = "//BazelTestProjectGame/Content:thirdperson/blueprints/bp_thirdpersoncharacter.uasset")
+    blueprint = "//BazelTestProjectGame/Content:ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset")
+    
